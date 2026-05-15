@@ -1,0 +1,27 @@
+services:
+  nginx:
+    image: YOUR_DOCKERHUB_USERNAME/nginx-final:YOUR_SHA
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-network
+
+  frontend:
+    image: YOUR_DOCKERHUB_USERNAME/frontend-final:YOUR_SHA
+    container_name: frontend-container
+    networks:
+      - app-network
+
+  backend:
+    image: YOUR_DOCKERHUB_USERNAME/backend-final:YOUR_SHA
+    container_name: backend-container
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
