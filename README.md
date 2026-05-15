@@ -47,6 +47,6 @@ Automation of the integration and deployment is managed automatically with a Git
 ### Pipeline
 
 * **Trigger**: This starts the process when code is pushed to main branch of the repository.
-* **Build and push ** This builds 3 docker images for the frontend, backend, and nginx and pushed them to Docker Hub.
+* **Build and push** This builds 3 docker images for the frontend, backend, and nginx and pushed them to Docker Hub.
 * **Deployment** Using a self hosted Github Actions Runner, the new images are pulled from Docker Hub and redeployed with Docker Compose.
 
